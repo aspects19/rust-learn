@@ -12,7 +12,10 @@ fn main() {
     io::stdin().read_line(&mut guess)
         .expect("Unable to read your input");
 
-    println!("You guessed {}", guess);
-    println!("Computer guessed {}", random);
+    if random.to_string() == guess {
+        println!("You won!\n The correct number was {}", guess)
+    } else {
+        println!("Your guess was {} and computer guessed {}", guess, random)
+    }
 
 }
