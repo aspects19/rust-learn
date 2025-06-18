@@ -13,7 +13,9 @@ fn main() {
     io::stdin().read_line(&mut guess)
         .expect("Unable to read your input");
 
-    match guess.cmp(&random.to_string()) {
+    let guess: u32 = guess.trim().parse().expect("Please type a number!");
+
+    match guess.cmp(&random) {
         Ordering::Greater => println!("Your guess was bigger"),
         Ordering::Equal => println!("You made the correct Guess"),
         Ordering::Less => println!("Your guess was smaller")
